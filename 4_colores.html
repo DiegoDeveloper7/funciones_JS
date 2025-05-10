@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COLORES HTML</title>
+</head>
+
+<style>
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fila {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+    gap: 100px;
+}
+
+.divcolor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    border: 3px solid black;
+    border-radius: 10px;
+    color: white;
+   
+}
+
+.fila #azul {
+    background-color: blue;
+}
+
+.fila #rojo {
+    background-color: red;
+}
+
+.fila #verde {
+    background-color: greenyellow;
+}
+
+.fila #amarillo {
+    background-color: yellow;
+}
+</style>
+
+
+<body>
+
+    <div class="container">
+        <h1>FUNCIÓN DE COLORES - CLICK BLACK</h1>
+        <div class="fila">
+            <div id="azul" class="divcolor">HTML</div>
+            <div id="rojo" class="divcolor">CSS</div>
+            <div id="verde" class="divcolor">JAVASCRIPT</div>
+            <div id="amarillo" class="divcolor">REACT</div>
+        </div>
+    </div>
+
+<script>
+
+function pintarAzul(elemento, color='blue') {
+    elemento.style.backgroundColor = color;
+  }
+
+  const dAzul = document.getElementById("azul");
+
+
+  dAzul.addEventListener("click", (event)=> {
+    pintarAzul(event.target, 'black');
+  });
+
+  pintarAzul(dAzul); 
+
+
+  // Div Rojo
+
+  function pintarRojo(elemento, color="red") {
+    elemento.style.backgroundColor = color;
+  }
+
+  const dRojo = document.getElementById("rojo");
+
+
+  dRojo.addEventListener("click", (event)=> {
+    pintarRojo(event.target, 'black');
+  });
+
+  pintarRojo(dRojo); 
+
+
+// div verde
+
+function pintarVerde(elemento, color="green") {
+    elemento.style.backgroundColor = color;
+  }
+
+  const dVerde = document.getElementById("verde");
+
+
+  dVerde.addEventListener("click", (event)=> {
+    pintarVerde(event.target, 'black');
+  });
+
+  pintarVerde(dVerde); 
+
+// div amarillo 
+
+function pintarAmarillo(elemento, color="yellow") {
+    elemento.style.backgroundColor = color;
+  }
+
+  const dAmarillo = document.getElementById("amarillo");
+
+
+  dAmarillo.addEventListener("click", (event)=> {
+    pintarAmarillo(event.target, 'black');
+  });
+
+  pintarAmarillo(dAmarillo); 
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
