@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRESIONAR TECLAS CREACION DE DIV</title>
+</head>
+
+<style>
+
+    h2 {
+       text-align: center;
+       margin-top: 50px;
+       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+       color: orange;
+    }
+
+   .teclasColor {
+      width: 200px;
+      height: 200px;
+      background-color: white;
+      border: 5px solid black;
+      border-radius: 10px;
+      margin: 50px auto;
+
+    }
+
+    h3 {
+       text-align: center;
+       margin-top: 50px;
+       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+       color: red; 
+    }
+
+    #contenedor-colores {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    }
+
+    .cajaColor {
+    width: 200px;
+    height: 200px;
+    border: 5px solid black;
+    border-radius: 10px;
+    margin: 50px auto;
+  }
+
+</style>
+
+<body>
+  
+    <h2>PRESIONA LAS TECLAS A - S - D CHANGE COLOR</h2>
+    <div id="key" class="teclasColor"></div>  
+    
+    
+     <h3>PRESIONA LAS TECLAS Q - W - E PARA CREAR TU COLOR - DIV</h3>
+    <div id="contenedor-colores"></div>
+
+<script>
+
+// Variable global para guardar el color actual
+let colorActual = '';
+let bordeActual = '';
+
+// Elemento div al que se le cambiará el color
+const keyDiv = document.getElementById('key');
+
+// Escuchar el evento de teclado
+document.addEventListener('keydown', function(event) {
+  const tecla = event.key.toLowerCase();
+
+  if (tecla === 'a') {
+    colorActual = 'pink';
+    bordeActual = 'red';
+  } else if (tecla === 's') {
+    colorActual = 'orange';
+    bordeActual = 'fuchsia';
+  } else if (tecla === 'd') {
+    colorActual = 'skyblue';
+    bordeActual = 'royalblue';
+  }
+
+  // Si se actualizó el color, aplicarlo al div
+  if (colorActual) {
+    keyDiv.style.backgroundColor = colorActual;
+    keyDiv.style.border = `5px solid ${bordeActual}`;
+  }
+
+});
+
+
+
+// BLOQUE CREACIÓN DIV Q - W - E
+
+document.addEventListener('keydown',(event)=>{
+    const tecla2 = event.key.toLowerCase();
+    if (tecla2 === 'q') {
+    manejarDivExtra('purple','#D8B0FF');
+    } else if (tecla2 === 'w') {
+    manejarDivExtra('gray','#4F4F4F');
+    } else if (tecla2 === 'e') {
+    manejarDivExtra('brown','#A0522D');
+   }
+})
+
+
+
+let divExtra = null;
+
+function manejarDivExtra(color,bcolor) {
+  if (!divExtra) {
+    divExtra = document.createElement('div');
+    divExtra.classList.add('cajaColor');
+    document.getElementById('contenedor-colores').appendChild(divExtra);
+  }
+  divExtra.style.backgroundColor = color;
+  divExtra.style.border = `5px solid ${bcolor}`;
+}
+
+
+</script>
+
+
+</body>
+</html>
